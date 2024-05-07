@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'tile.dart';
 
 class Grid extends StatelessWidget {
   const Grid({
@@ -17,10 +18,5 @@ class Grid extends StatelessWidget {
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 4),
         itemBuilder: (itemBuilder,index) {
-          return Container(
-            decoration: BoxDecoration(border: Border.all(color: Colors.black,width: 1)),
-            child: Center(child: Text("$index")),
-          );
-        });
-  }
-}
+          return Tile(index :index);
+        });}}
