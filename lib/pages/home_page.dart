@@ -2,7 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wordle/constants/words.dart';
-import 'package:wordle/provider/controller.dart';
+import 'package:wordle/pages/settings.dart';
+import 'package:wordle/providers/controller.dart';
 import '../componnents/grid.dart';
 import '../componnents/keyboardrow.dart';
 
@@ -30,6 +31,9 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: const Text('Wordle'),
         centerTitle: true,
+        actions: [IconButton(onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder:(context) => const Settings()));
+        }, icon:const Icon(Icons.settings))],
       ),
       body:const Column(
         children: [

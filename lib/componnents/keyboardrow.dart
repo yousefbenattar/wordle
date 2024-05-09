@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wordle/constants/anwser_stages.dart';
 import '../constants/colors.dart';
-import '../provider/controller.dart';
+import '../providers/controller.dart';
 import '../data/keys_map.dart';
 
 class KeyBoardRow extends StatelessWidget {
@@ -48,7 +48,9 @@ class KeyBoardRow extends StatelessWidget {
                   onTap: (){
                     Provider.of<Controller>(context,listen: false).setKeyTapped(value: e.key);
                   },
-                  child: Center(child: Text(e.key , style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  child: Center(child:
+                  e.key == "BACK" ? const Icon(Icons.backspace_outlined) :
+                   Text(e.key , style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: keyColor,
                   ),))),
               )),
